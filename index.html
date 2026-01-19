@@ -15,7 +15,7 @@
             --cream: #faf6f0;
             --cream-dark: #f0e9df;
             --olive: #606c38;
-            --gold: #dda15e;
+            --gold: #dda15e; 
             --gold-light: #e8c088;
             --charcoal: #2d2d2d;
             --brown: #8b7355;
@@ -407,25 +407,26 @@
             background: var(--cream);
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .about-image {
-            position: relative;
+        .about-hero-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            display: block;
         }
 
-        .about-image-frame {
+        .about-hero-image-frame {
             position: relative;
             padding: 20px;
             background: var(--paper);
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        .about-image-frame::before {
+        .about-hero-image-frame::before {
             content: '';
             position: absolute;
             top: 10px;
@@ -437,52 +438,14 @@
             pointer-events: none;
         }
 
-        .about-image-frame img {
+        .about-hero-image-frame img {
             width: 100%;
             display: block;
         }
 
-        .about-image-caption {
-            text-align: center;
-            padding: 20px 20px 0;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: var(--brown);
-        }
-
-        .about-badge {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 120px;
-            height: 120px;
-            background: var(--burgundy);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--cream);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        .about-badge .year {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 1;
-        }
-
-        .about-badge .text {
-            font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
-
-        .about-content {
-            padding-right: 40px;
+        .about-content-full {
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .section-eyebrow {
@@ -510,7 +473,7 @@
         .about-text {
             font-size: 1.05rem;
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.9;
         }
 
@@ -519,10 +482,24 @@
             font-weight: 500;
         }
 
+        .about-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--burgundy);
+            text-align: center;
+            padding: 30px 40px;
+            margin: 40px 0;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            background: var(--paper);
+        }
+
         .about-signature {
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         .signature-text {
@@ -554,19 +531,24 @@
 
         .menu-cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .menu-card {
             background: var(--paper);
             text-align: center;
             overflow: hidden;
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-decoration: none;
+            display: block;
         }
 
         .menu-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .menu-card-image {
@@ -601,6 +583,24 @@
             font-size: 0.95rem;
             color: #777;
             font-style: italic;
+        }
+
+        .menu-card-cta {
+            display: inline-block;
+            margin-top: 15px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            padding: 10px 20px;
+            border: 2px solid var(--burgundy);
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover .menu-card-cta {
+            background: var(--burgundy);
+            color: var(--cream);
         }
 
         /* Location */
@@ -708,6 +708,13 @@
 
         .hours-time {
             color: #666;
+        }
+
+        .hours-note {
+            font-style: italic;
+            color: #888;
+            margin-top: 10px;
+            font-size: 0.95rem;
         }
 
         /* CTA Banner */
@@ -868,26 +875,9 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-
-            .about-content {
-                padding-right: 0;
-                order: 2;
-            }
-
-            .about-image {
-                order: 1;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
             .menu-cards {
                 grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
+                max-width: 450px;
             }
 
             .location-grid {
@@ -958,17 +948,6 @@
                 padding: 60px 0;
             }
 
-            .about-badge {
-                width: 100px;
-                height: 100px;
-                top: -15px;
-                right: -10px;
-            }
-
-            .about-badge .year {
-                font-size: 1.6rem;
-            }
-
             .menu-preview {
                 padding: 60px 0;
             }
@@ -989,6 +968,12 @@
             .footer-bottom {
                 flex-direction: column;
                 gap: 20px;
+                text-align: center;
+            }
+
+            .hours-list li {
+                flex-direction: column;
+                gap: 5px;
                 text-align: center;
             }
         }
@@ -1032,7 +1017,7 @@
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#location">Visit Us</a></li>
                     <li><a href="tel:6318861536">Call</a></li>
-                    <li><a href="#order" class="header-cta">Order Now</a></li>
+                    <li><a href="https://bellissimopizza.avcoindustries.com/order-now" class="header-cta">Order Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -1052,7 +1037,7 @@
                     <span>Thin & Traditional Crust</span>
                 </div>
                 <div class="hero-buttons">
-                    <a href="https://bellissimopizza.avcoindustries.com/order-now" class="btn btn-gold">Order Online</a>
+                    <a href="https://bellissimopizza.avcoindustries.com/order-now" class="btn btn-gold">Order Now</a>
                     <a href="#about" class="btn btn-outline-light">Our Story</a>
                 </div>
             </div>
@@ -1062,40 +1047,50 @@
         <div class="section-divider">
             <div class="divider-content">
                 <div class="divider-line"></div>
-                <div class="divider-icon">🍕</div>
-                <div class="divider-line"></div>
             </div>
         </div>
 
         <!-- About -->
         <section class="about" id="about">
             <div class="container">
-                <div class="about-grid">
-                    <div class="about-content fade-up">
-                        <p class="section-eyebrow">Our Story</p>
-                        <h2 class="section-title">Welcome to<br><em>Bellissimo Pizzeria & Pasta</em></h2>
-                        <p class="about-text">
-                            We're excited to open our doors at <strong>The Shoppes at East Wind</strong> in Wading River! Our casual, clean joint specializes in baking a variety of <strong>specialty pizzas</strong> with your choice of thin or traditional crust options.
-                        </p>
-                        <p class="about-text">
-                            From our signature pies to <strong>fresh pasta dishes</strong> and our famous <strong>garlic knots</strong>, everything is made with care and quality ingredients. Whether you're craving a classic slice or one of our creative specialty pizzas, we've got something delicious for everyone.
-                        </p>
-                        <p class="about-text">
-                            Stop by and experience the difference of fresh-baked pizza and authentic pasta in a welcoming atmosphere. We can't wait to serve you!
-                        </p>
-                        <div class="about-signature">
-                            <p class="signature-text">— The Bellissimo Team</p>
-                        </div>
+                <div class="about-header fade-up">
+                    <p class="section-eyebrow">Our Story</p>
+                    <h2 class="section-title">Welcome to<br><em>Bellissimo Pizza & Pasta</em></h2>
+                </div>
+                
+                <!-- Hero Image for About Section -->
+                <div class="about-hero-image fade-up stagger-1">
+                    <div class="about-hero-image-frame">
+                        <img src="assets/images/about-hero.jpg" alt="Bellissimo Pizza & Pasta">
                     </div>
-                    <div class="about-image fade-up stagger-2">
-                        <div class="about-image-frame">
-                            <img src="assets/images/gallery-1.png" alt="Our kitchen">
-                            <p class="about-image-caption">Fresh-baked daily</p>
-                        </div>
-                        <div class="about-badge">
-                            <span class="year">2025</span>
-                            <span class="text">Now Open</span>
-                        </div>
+                </div>
+
+                <div class="about-content-full fade-up stagger-2">
+                    <p class="about-text">
+                        <strong>Bellissimo Pizza & Pasta</strong> located in the Shoppes at East Wind in Wading River, NY is more than just a place to eat—it's a labor of love, rooted in tradition, passion, and community.
+                    </p>
+                    <p class="about-text">
+                        Owned and operated by <strong>Salvatore Lopiccolo</strong>, Bellissimo was born when Sal came out of retirement to do what he loves most: making great food and bringing people together. After years of success with Rocky Point Pizza, Sal thought his days behind the counter were over—until a friend mentioned that the pizza spot at the Shoppes at East Wind was available. One visit was all it took.
+                    </p>
+                    
+                    <div class="about-quote">
+                        "Why not? Let's get back into it."
+                    </div>
+                    
+                    <p class="about-text">
+                        —and Bellissimo was born.
+                    </p>
+                    <p class="about-text">
+                        Sal has transformed Bellissimo into one of the most community-oriented pizza and pasta restaurants in town. Located at the heart of the Shoppes at East Wind, Bellissimo thrives on the close-knit atmosphere of local shop owners working together and serving neighbors who feel like family.
+                    </p>
+                    <p class="about-text">
+                        Our menu reflects Sal's creativity and experience, featuring an abundance of <strong>specialty pizzas</strong> you won't find anywhere else—favorites like sausage and broccoli rabe, eggplant rollatini pizza, and other thoughtfully crafted pies made with the finest ingredients. Beyond pizza, we proudly offer a wide variety of classic and contemporary pasta dishes, hearty entrées, fresh salads, and comforting Italian favorites made to satisfy every appetite.
+                    </p>
+                    <p class="about-text">
+                        At Bellissimo Pizza & Pasta, every dish is made with care, every guest is welcomed warmly, and every visit feels like coming home. Whether you're stopping in for a quick slice, a family dinner, or a meal shared with friends, we're honored to serve you—and our community—one delicious bite at a time.
+                    </p>
+                    <div class="about-signature">
+                        <p class="signature-text">— Salvatore & The Bellissimo Team</p>
                     </div>
                 </div>
             </div>
@@ -1106,36 +1101,33 @@
             <div class="container">
                 <div class="menu-preview-header fade-up">
                     <p class="section-eyebrow">From Our Kitchen</p>
-                    <h2 class="section-title">Authentic <em>Italian</em> Favorites</h2>
+                    <h2 class="section-title">View Our <em>Menus</em></h2>
                 </div>
                 <div class="menu-cards">
-                    <div class="menu-card fade-up stagger-1">
+                    <a href="menu.pdf" target="_blank" class="menu-card fade-up stagger-1">
                         <div class="menu-card-image">
-                            <img src="assets/images/gallery-1.png" alt="Specialty Pizza">
+                            <img src="menu.jpg" alt="Dine In & Take Out Menu">
                         </div>
                         <div class="menu-card-content">
-                            <h3 class="menu-card-title">Specialty Pizza</h3>
-                            <p class="menu-card-desc">Thin or traditional crust</p>
+                            <h3 class="menu-card-title">Dine In & Take Out Menu</h3>
+                            <p class="menu-card-desc">Pizza, pasta, entrées & more</p>
+                            <span class="menu-card-cta">View Menu</span>
                         </div>
-                    </div>
-                    <div class="menu-card fade-up stagger-2">
+                    </a>
+                    <a href="menu_catering.pdf" target="_blank" class="menu-card fade-up stagger-2">
                         <div class="menu-card-image">
-                            <img src="assets/images/gallery-2.png" alt="Fresh Pasta">
+                            <img src="cater.jpeg" alt="Catering Menu">
                         </div>
                         <div class="menu-card-content">
-                            <h3 class="menu-card-title">Fresh Pasta</h3>
-                            <p class="menu-card-desc">Classic Italian dishes</p>
+                            <h3 class="menu-card-title">Catering Menu</h3>
+                            <p class="menu-card-desc">Perfect for any occasion</p>
+                            <span class="menu-card-cta">View Menu</span>
                         </div>
-                    </div>
-                    <div class="menu-card fade-up stagger-3">
-                        <div class="menu-card-image">
-                            <img src="assets/images/gallery-3.png" alt="Garlic Knots">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3 class="menu-card-title">Garlic Knots</h3>
-                            <p class="menu-card-desc">Fresh-baked daily</p>
-                        </div>
-                    </div>
+                    </a>
+                </div>
+                <div class="hero-buttons" style="margin-top: 40px;">
+                    <a href="menu.pdf" target="_blank" class="btn btn-gold">View Menu</a>
+                    <a href="menu_catering.pdf" target="_blank" class="btn btn-outline-light">View Catering</a>
                 </div>
             </div>
         </section>
@@ -1146,7 +1138,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Catering for Any Occasion</h2>
                     <p class="cta-subtitle">From family gatherings to corporate events—let us bring the feast to you.</p>
-                    <a href="tel:6318861536" class="btn btn-cream">Call to Order</a>
+                    <a href="https://bellissimopizza.avcoindustries.com/order-now" class="btn btn-cream">Order Now</a>
                 </div>
             </div>
         </section>
@@ -1186,10 +1178,15 @@
                             <p class="location-label">Hours of Operation</p>
                             <ul class="hours-list">
                                 <li>
-                                    <span class="hours-day">Monday – Sunday</span>
-                                    <span class="hours-time">Call for hours</span>
+                                    <span class="hours-day">Open 7 Days a Week</span>
+                                    <span class="hours-time"></span>
+                                </li>
+                                <li>
+                                    <span class="hours-day">Sunday – Saturday</span>
+                                    <span class="hours-time">11:00am – 10:00pm</span>
                                 </li>
                             </ul>
+                            <p class="hours-note">Holidays May Vary</p>
                         </div>
                     </div>
                 </div>
@@ -1207,7 +1204,7 @@
                         <span class="logo-sub">The Shoppes at East Wind</span>
                     </a>
                     <p class="footer-tagline">
-                        A casual, clean joint baking specialty pizzas with thin or traditional crust options, alongside fresh pasta and famous garlic knots.
+                        A labor of love, rooted in tradition, passion, and community. Serving specialty pizzas, fresh pasta, and Italian favorites.
                         <br><br>
                         <em>"Specialty Pizza & Fresh Pasta"</em>
                     </p>
@@ -1224,9 +1221,10 @@
                 <div>
                     <h4 class="footer-title">Hours</h4>
                     <p class="footer-hours">
-                        Call for hours<br>
-                        631-886-1536<br>
-                        5768 NY-25A, Suite K
+                        Open 7 Days a Week<br>
+                        11:00am – 10:00pm<br>
+                        Holidays May Vary<br><br>
+                        <a href="tel:6318861536" style="color: var(--gold);">(631) 886-1536</a>
                     </p>
                 </div>
             </div>
