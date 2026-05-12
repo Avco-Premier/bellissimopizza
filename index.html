@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellissimo Pizzeria & Pasta | Pizza, Pasta & Catering in Wading River, NY</title>
+    <title>Bellissimo Pizzeria & Pasta | Wading River Pizza, Pasta & Catering</title>
     <link rel="canonical" href="https://www.bellissimospizzeria.com/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/6978/6978255.png">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/6978/6978255.png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/6978/6978255.png">
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Visit Bellissimo Pizzeria & Pasta at The Shoppes at East Wind in Wading River, NY for specialty pizza, fresh pasta, Italian favorites, catering, dine-in, takeout, and online ordering.">
+    <meta name="description" content="Bellissimo Pizzeria &amp; Pasta serves specialty pizza, fresh pasta, Italian favorites, catering, dine-in, takeout, and online ordering at The Shoppes at East Wind in Wading River, NY.">
     <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Bellissimo Pizzeria & Pasta | Wading River, NY">
-    <meta property="og:description" content="Specialty pizza, fresh pasta, Italian favorites, and catering at The Shoppes at East Wind in Wading River. Dine in, take out, or order online.">
+    <meta property="og:title" content="Bellissimo Pizzeria &amp; Pasta | Wading River, NY">
+    <meta property="og:description" content="Specialty pizza, fresh pasta, Italian favorites, catering, dine-in, takeout, and online ordering in Wading River, NY.">
     <meta property="og:url" content="https://www.bellissimospizzeria.com/">
     <meta property="og:image" content="https://www.bellissimospizzeria.com/owner.jpg">
     <meta property="og:image:width" content="1200">
@@ -29,16 +27,12 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bellissimo Pizzeria & Pasta | Wading River, NY">
-    <meta name="twitter:description" content="Specialty pizza, fresh pasta, Italian favorites, and catering at The Shoppes at East Wind in Wading River. Dine in, take out, or order online.">
+    <meta name="twitter:title" content="Bellissimo Pizzeria &amp; Pasta | Wading River, NY">
+    <meta name="twitter:description" content="Specialty pizza, fresh pasta, Italian favorites, catering, dine-in, takeout, and online ordering in Wading River, NY.">
     <meta name="twitter:image" content="https://www.bellissimospizzeria.com/owner.jpg">
     <meta name="twitter:image:alt" content="Bellissimo Pizzeria & Pasta in Wading River, New York">
-
-    <!-- Google Search Image -->
     <meta itemprop="image" content="https://www.bellissimospizzeria.com/owner.jpg">
     <link rel="image_src" href="https://www.bellissimospizzeria.com/owner.jpg">
-
-    <!-- Schema.org JSON-LD for Google Rich Results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1078,6 +1072,46 @@
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
+    
+
+/* Visual polish pass: clearer cards, buttons, and media rhythm. */
+:where(.btn, .btn-gold, .btn-primary, .btn-outline, .btn-outline-gold, .btn-cream, .btn-white, .nav-order, .mobile-order, .sticky-order, .nav-order-btn) {
+  border-radius: 999px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+:where(.btn, .btn-gold, .btn-primary, .btn-outline, .btn-outline-gold, .btn-cream, .btn-white, .nav-order, .mobile-order, .nav-order-btn):hover {
+  transform: translateY(-2px);
+}
+
+:where(.menu-item, .location-info, .info-block, .feature-card, .card, .review-card) {
+  box-shadow: 0 18px 48px rgba(23, 16, 12, 0.12);
+}
+
+:where(.menu-item img, .about-img-main, .about-img-accent, .story-image, .hero-media img) {
+  object-fit: cover;
+}
+
+:where(.hero-title, .section-title) {
+  text-wrap: balance;
+}
+
+:where(.hero-tagline, .about-body, .menu-intro, .callout-sub, .footer-desc) {
+  text-wrap: pretty;
+}
+
+@media (max-width: 640px) {
+  :where(.button-row, .hero-actions, .location-actions, .menu-cta-wrap) {
+    gap: 12px;
+  }
+
+  :where(.btn, .btn-gold, .btn-primary, .btn-outline, .btn-outline-gold, .btn-cream, .btn-white, .nav-order-btn) {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.25;
+  }
+}
+
     </style>
 </head>
 <body>
