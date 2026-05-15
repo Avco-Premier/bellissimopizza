@@ -18,7 +18,7 @@
     <meta property="og:title" content="Bellissimo Pizzeria &amp; Pasta | Wading River, NY">
     <meta property="og:description" content="Specialty pizza, fresh pasta, Italian favorites, catering, dine-in, takeout, and online ordering in Wading River, NY.">
     <meta property="og:url" content="https://www.bellissimospizzeria.com/">
-    <meta property="og:image" content="https://www.bellissimospizzeria.com/owner.jpg">
+    <meta property="og:image" content="https://www.bellissimospizzeria.com/assets/images/schema-16x9.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Bellissimo Pizzeria & Pasta in Wading River, New York">
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bellissimo Pizzeria &amp; Pasta | Wading River, NY">
     <meta name="twitter:description" content="Specialty pizza, fresh pasta, Italian favorites, catering, dine-in, takeout, and online ordering in Wading River, NY.">
-    <meta name="twitter:image" content="https://www.bellissimospizzeria.com/owner.jpg">
+    <meta name="twitter:image" content="https://www.bellissimospizzeria.com/assets/images/schema-16x9.jpg">
     <meta name="twitter:image:alt" content="Bellissimo Pizzeria & Pasta in Wading River, New York">
     <meta itemprop="image" content="https://www.bellissimospizzeria.com/owner.jpg">
     <link rel="image_src" href="https://www.bellissimospizzeria.com/owner.jpg">
@@ -40,48 +40,64 @@
       "@id": "https://www.bellissimospizzeria.com/#restaurant",
       "name": "Bellissimo Pizzeria & Pasta",
       "url": "https://www.bellissimospizzeria.com/",
-      "image": "https://www.bellissimospizzeria.com/owner.jpg",
+      "image": [
+            "https://www.bellissimospizzeria.com/assets/images/schema-1x1.jpg",
+            "https://www.bellissimospizzeria.com/assets/images/schema-4x3.jpg",
+            "https://www.bellissimospizzeria.com/assets/images/schema-16x9.jpg"
+      ],
       "telephone": "+1-631-886-1536",
-      "servesCuisine": ["Pizza", "Italian"],
+      "servesCuisine": [
+            "Pizza",
+            "Italian"
+      ],
       "priceRange": "$$",
       "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5768 NY-25A, Suite K",
-        "addressLocality": "Wading River",
-        "addressRegion": "NY",
-        "postalCode": "11792",
-        "addressCountry": "US"
+            "@type": "PostalAddress",
+            "streetAddress": "5768 NY-25A, Suite K",
+            "addressLocality": "Wading River",
+            "addressRegion": "NY",
+            "postalCode": "11792",
+            "addressCountry": "US"
       },
       "location": {
-        "@type": "Place",
-        "name": "The Shoppes at East Wind"
+            "@type": "Place",
+            "name": "The Shoppes at East Wind"
       },
       "hasMenu": [
-        "https://www.bellissimospizzeria.com/menu.pdf",
-        "https://www.bellissimospizzeria.com/menu_catering.pdf"
+            "https://www.bellissimospizzeria.com/menu.pdf",
+            "https://www.bellissimospizzeria.com/menu_catering.pdf"
       ],
       "acceptsReservations": false,
       "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "11:00",
-          "closes": "22:00"
-        }
+            {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                  ],
+                  "opens": "11:00",
+                  "closes": "22:00"
+            }
       ],
       "potentialAction": {
-        "@type": "OrderAction",
-        "target": "https://bellissimopizza.avcoindustries.com/order-now"
-      }
-    }
+            "@type": "OrderAction",
+            "target": "https://bellissimopizza.avcoindustries.com/order-now"
+      },
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.9456,
+            "longitude": -72.8206
+      },
+      "menu": [
+            "https://www.bellissimospizzeria.com/menu.pdf",
+            "https://www.bellissimospizzeria.com/menu_catering.pdf"
+      ]
+}
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
