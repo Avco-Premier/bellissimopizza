@@ -1,0 +1,30 @@
+{
+  "name": "Bellissimo Pizzeria & Pasta",
+  "public_domain": "https://www.bellissimospizzeria.com",
+  "order_url": "https://bellissimopizza.avcoindustries.com/order-now",
+  "order_url_note": "HARD CONSTRAINT VIOLATION: this is an internal Avco host currently exposed in nav/hero/CTA/JSON-LD. Must be replaced with the real public direct-ordering URL (e.g. a *.direct-ordering.com subdomain or public custom domain) before this can be used as config.order_url. Do not use this value as the canonical order_url until Yon confirms the real public link.",
+  "_needs_confirmation": true,
+  "phone": "+1-631-886-1536",
+  "address": {
+    "streetAddress": "5768 NY-25A, Suite K",
+    "addressLocality": "Wading River",
+    "addressRegion": "NY",
+    "postalCode": "11792",
+    "addressCountry": "US"
+  },
+  "location_name": "The Shoppes at East Wind",
+  "hours": [
+    { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:00", "closes": "22:00" }
+  ],
+  "cuisine": ["Pizza", "Italian"],
+  "price_range": "$$",
+  "owner_name": "Salvatore Lopiccolo",
+  "specialties": ["sausage and broccoli rabe pizza", "eggplant rollatini pizza", "pasta", "catering"],
+  "neighborhood": "Wading River, NY",
+  "served_areas": ["Wading River, NY"],
+  "menu_format": "pdf_image_only",
+  "menu_files": ["menu.pdf", "menu_catering.pdf"],
+  "aggregate_rating": null,
+  "social": {},
+  "stack": "flat_static"
+}
