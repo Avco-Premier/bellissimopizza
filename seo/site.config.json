@@ -1,7 +1,7 @@
 {
   "name": "Bellissimo Pizzeria & Pasta",
   "public_domain": "https://www.bellissimospizzeria.com",
-  "order_url": "https://bellissimopizza.avcoindustries.com/order-now",
+  "order_url": "https://bellissimopizza.direct-ordering.com/order-now",
   "order_url_note": "HARD CONSTRAINT VIOLATION: this is an internal Avco host currently exposed in nav/hero/CTA/JSON-LD. Must be replaced with the real public direct-ordering URL (e.g. a *.direct-ordering.com subdomain or public custom domain) before this can be used as config.order_url. Do not use this value as the canonical order_url until Yon confirms the real public link.",
   "_needs_confirmation": true,
   "phone": "+1-631-886-1536",
