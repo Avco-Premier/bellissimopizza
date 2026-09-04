@@ -1,0 +1,28 @@
+---
+interface Props {
+  source: string;
+}
+
+const { source } = Astro.props;
+const head = source.match(/<head>([\s\S]*?)<\/head>/i)?.[1] ?? '';
+const bodyTag = source.match(/<body([^>]*)>/i)?.[1] ?? '';
+const body = source.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? '';
+const bodyClass = bodyTag.match(/class=["']([^"']*)["']/i)?.[1];
+const menuMode = bodyTag.match(/data-menu-mode=["']([^"']*)["']/i)?.[1];
+const cleanHead = head.replace(/<link\s+rel=["']stylesheet["'][^>]*>/gi, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <Fragment set:html={cleanHead} />
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/enhancements.css" />
+    <link rel="stylesheet" href="/polish.css" />
+    <link rel="stylesheet" href="/map-polish.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class={bodyClass} data-menu-mode={menuMode}>
+    <Fragment set:html={body} />
+  </body>
+</html>
