@@ -46,9 +46,10 @@ const cleanHead = head.replace(/<link\s+rel=["']stylesheet["'][^>]*>/gi, '');
         const isIOSSafari = isIOS
           && /Safari/i.test(userAgent)
           && !/CriOS|FxiOS|EdgiOS|OPiOS|DuckDuckGo/i.test(userAgent);
+        const isMobileViewport = window.matchMedia('(max-width: 900px)').matches;
 
         // iOS Safari renders the native banner from apple-itunes-app.
-        if (!banner || !link || !message || isIOSSafari || (!isAndroid && !isIOS)) return;
+        if (!banner || !link || !message || !isMobileViewport || isIOSSafari || (!isAndroid && !isIOS)) return;
 
         const platform = isAndroid ? 'Android' : 'iOS';
         const dismissalKey = `bellissimo${platform}BannerDismissedUntil`;

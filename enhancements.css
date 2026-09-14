@@ -70,3 +70,30 @@
   position: absolute;
   top: 22px;
 }
+
+/* Defense in depth: the custom prompt is mobile-only, even with a spoofed user agent. */
+@media (min-width: 901px) {
+  .mobile-app-banner {
+    display: none !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .mobile-app-banner {
+    gap: 8px;
+    padding-right: 8px;
+  }
+
+  .mobile-app-banner > img {
+    height: 46px;
+    width: 46px;
+  }
+
+  .mobile-app-banner__copy span {
+    display: none;
+  }
+
+  .mobile-app-banner > a {
+    padding: 8px 10px;
+  }
+}
