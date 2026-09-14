@@ -15,6 +15,7 @@ const cleanHead = head.replace(/<link\s+rel=["']stylesheet["'][^>]*>/gi, '');
 <html lang="en">
   <head>
     <Fragment set:html={cleanHead} />
+    <meta name="apple-itunes-app" content="app-id=6769843722" />
     <meta name="format-detection" content="telephone=yes" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/enhancements.css" />
@@ -23,6 +24,38 @@ const cleanHead = head.replace(/<link\s+rel=["']stylesheet["'][^>]*>/gi, '');
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body class={bodyClass} data-menu-mode={menuMode}>
+    <aside class="android-app-banner" id="androidAppBanner" aria-label="Get the Bellissimo app" hidden>
+      <button class="android-app-banner__close" type="button" aria-label="Dismiss app banner">&times;</button>
+      <img src="/assets/images/bellissimo-logo.webp" alt="" width="52" height="52" />
+      <div class="android-app-banner__copy">
+        <strong>Bellissimo Pizzeria &amp; Pasta</strong>
+        <span>Order faster with our Android app</span>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.avco.bellissimo">Get the app</a>
+    </aside>
     <Fragment set:html={body} />
+    <script is:inline>
+      (() => {
+        const banner = document.getElementById('androidAppBanner');
+        if (!banner || !/Android/i.test(navigator.userAgent)) return;
+
+        let dismissedUntil = 0;
+        try {
+          dismissedUntil = Number(localStorage.getItem('bellissimoAndroidBannerDismissedUntil') || 0);
+        } catch {}
+        if (Date.now() < dismissedUntil) return;
+
+        banner.hidden = false;
+        banner.querySelector('button')?.addEventListener('click', () => {
+          banner.hidden = true;
+          try {
+            localStorage.setItem(
+              'bellissimoAndroidBannerDismissedUntil',
+              String(Date.now() + 7 * 24 * 60 * 60 * 1000),
+            );
+          } catch {}
+        });
+      })();
+    </script>
   </body>
 </html>
